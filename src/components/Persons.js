@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Persons = ({ filterName, persons }) => {
-  console.log(persons)
   return (
     <div>
       {persons.map(e => {

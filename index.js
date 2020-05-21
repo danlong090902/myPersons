@@ -63,9 +63,9 @@ app.post('/api/persons', (req, res) => {
   person
     .save()
     .then(savedPerson => {
-      res.json(savedPerson)
+      res.json({ data: savedPerson })
     })
-    .catch(err => res.status(400).json({ message: err.message }))
+    .catch(err => res.json({ message: err.message }))
 })
 
 

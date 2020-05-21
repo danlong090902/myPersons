@@ -15,10 +15,12 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
 
 
 const personSchema = new mongoose.Schema({
-  name: { type: String, required: true, unique: true },
-  number: { type: String, index: true, unique: true, required: true },
+  name: { type: String, minlength: 3, required: true, unique: true },
+  number: { type: String, required: true, minlength: 8 },
   id: Number,
 })
+
+
 
 personSchema.plugin(uniqueValidator)
 personSchema.set('toJSON', {
